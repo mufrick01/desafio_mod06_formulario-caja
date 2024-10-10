@@ -1,5 +1,5 @@
 <template>
-    <div style="display: flex; gap: 20px; justify-content: center;">
+    <div style="display: flex; gap: 20px; justify-content: center; font-family: monospace">
         <form id="formulario">
             <label>
                 <h3>bgColor</h3>
@@ -34,14 +34,14 @@
             <label>
                 <h3>tamaño letra</h3>
                 <div style="margin: 0 40px;">
-                    <label for="fs-pequeno" style="font-size:15px">
+                    <label for="fs-pequeno">
                         Pequeño <input v-model="fsize" type="radio" value="15px" name="fsize" id="fs-pequeno">
                     </label>
-                    <label for="fs-mediano" style="font-size:20px">
+                    <label for="fs-mediano">
                         Mediano <input v-model="fsize" type="radio" value="25px" name="fsize" id="fs-mediano">
                     </label>
-                    <label for="fs-grande" style="font-size:30px">
-                        Grande <input v-model="fsize" type="radio" value="40px" name="fsize" id="fs-grande">
+                    <label for="fs-grande">
+                        Grande <input v-model="fsize" type="radio" value="35px" name="fsize" id="fs-grande">
                     </label>
                 </div>
             </label>
@@ -85,13 +85,15 @@ export default {
     margin: 0;
     box-sizing: border-box;
 }
-
+h3{
+    width: 200px;
+}
 #formulario {
     background-color: #1a0;
     display: flex;
     flex-direction: column;
     color: #eee;
-    width: 700px;
+    width: 800px;
 }
 
 #formulario>label {
@@ -102,8 +104,15 @@ export default {
     padding: 10px;
 }
 
-input {
-    flex-grow: 1;
+select{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+#formulario > label > input {
+    width: 100%;
 }
 
 #caja {

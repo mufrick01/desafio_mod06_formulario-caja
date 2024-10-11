@@ -2,16 +2,16 @@
     <div style="display: flex; gap: 20px; justify-content: center; font-family: monospace">
         <form id="formulario">
             <label>
-                <h3>bgColor</h3>
+                <h3>Color fondo</h3>
                 <input type="color" v-model="bgColor">
             </label>
             <label>
-                <h3>textColor</h3>
+                <h3>Color texto</h3>
                 <input type="color" v-model="textColor">
             </label>
 
             <label>
-                <h3> border radius</h3>
+                <h3>Suavizar bordes</h3>
                 <input v-model="borderRadiusValue" type="range" min="0" max="50">
             </label>
 

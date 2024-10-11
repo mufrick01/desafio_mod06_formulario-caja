@@ -131,8 +131,6 @@ textarea {
     gap: 20px;
 }
 
-
-
 #caja {
     height: 400px;
     width: 400px;

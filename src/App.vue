@@ -1,8 +1,5 @@
 <template>
-  
-<h1>Formulario sobre la caja</h1>
-<hr>
-<FormularioCaja/>
+  <FormularioCaja />
 </template>
 
 <script>
@@ -17,5 +14,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

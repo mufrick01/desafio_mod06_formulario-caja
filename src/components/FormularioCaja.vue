@@ -20,6 +20,10 @@
                 <textarea v-model="textContent"
                     placeholder="escribe aquí lo que quieras que aparezca en la caja del lado"></textarea>
             </label>
+            <div class="checklabel">
+                <h3>¿Mostrar texto?</h3>
+                <input v-model="textCheck" type="checkbox">
+            </div>
             <label>
                 <h3>Fuente</h3>
                 <select v-model="selectedFont">
@@ -27,13 +31,13 @@
                     </option>
                 </select>
             </label>
+            <div class="checklabel">
+                <h3>¿Opacidad?</h3>
+                <input v-model="opacityCheck" type="checkbox" >
+            </div>
             <label>
-                <h3>Opacity?</h3>
-                <input v-model="opacityCheck" type="checkbox">
-            </label>
-            <label>
-                <h3>tamaño letra</h3>
-                <div style="margin: 0 40px;">
+                <h3>Tamaño letra</h3>
+                <div style="margin:10px 40px">
                     <label for="fs-pequeno">
                         Pequeño <input v-model="fsize" type="radio" value="15px" name="fsize" id="fs-pequeno">
                     </label>
@@ -55,7 +59,7 @@
             opacity: opacityCheck ? 0.5 : 1,
             fontSize: fsize
         }">
-            <h2>{{ textContent }}</h2>
+            <h2 v-if="textCheck">{{ textContent }}</h2>
         </article>
     </div>
 
@@ -70,6 +74,7 @@ export default {
             bgColor: '#333',
             textColor: '#eee',
             textContent: 'Awesome Vue',
+            textCheck: true,
             textFonts: ['monospace', 'cursive', 'fantasy'],
             selectedFont: 'fantasy',
             opacityCheck: false,
@@ -85,35 +90,48 @@ export default {
     margin: 0;
     box-sizing: border-box;
 }
-h3{
-    width: 200px;
-}
+
 #formulario {
     background-color: #1a0;
     display: flex;
     flex-direction: column;
     color: #eee;
-    width: 800px;
+    width: 500px;
+    padding:20px 10px;
+    gap: 20px
 }
 
-#formulario>label {
+#formulario > label {
     margin: 0 auto;
     width: 80%;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     padding: 10px;
+    text-align: center
 }
 
-select{
+
+select {
     width: 100%;
 }
 
-textarea{
+textarea {
     width: 100%;
 }
-#formulario > label > input {
+
+#formulario>label>input {
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
+
+.checklabel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
 
 #caja {
     height: 400px;
